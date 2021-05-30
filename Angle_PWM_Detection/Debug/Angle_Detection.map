@@ -1,0 +1,550 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                              ./UART.o (__udivmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                              ./Angle_Detection.o (__do_clear_bss)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+LOAD ./Angle_Detection.o
+LOAD ./TIMERS.o
+LOAD ./UART.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1792
+ *(.vectors)
+ .vectors       0x00000000       0x8c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000008c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000008c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000008c                __ctors_start = .
+ *(.ctors)
+                0x0000008c                __ctors_end = .
+                0x0000008c                __dtors_start = .
+ *(.dtors)
+                0x0000008c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000008c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x0000008c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000008c        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000098       0x1a c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000098                __do_copy_data
+ .init4         0x000000b2       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x000000b2                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000c2        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init9)
+ *(.text)
+ .text          0x000000ca        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x000000ca                __vector_22
+                0x000000ca                __vector_32
+                0x000000ca                __vector_34
+                0x000000ca                __bad_interrupt
+                0x000000ca                __vector_6
+                0x000000ca                __vector_31
+                0x000000ca                __vector_3
+                0x000000ca                __vector_23
+                0x000000ca                __vector_30
+                0x000000ca                __vector_25
+                0x000000ca                __vector_11
+                0x000000ca                __vector_17
+                0x000000ca                __vector_19
+                0x000000ca                __vector_7
+                0x000000ca                __vector_5
+                0x000000ca                __vector_33
+                0x000000ca                __vector_4
+                0x000000ca                __vector_2
+                0x000000ca                __vector_21
+                0x000000ca                __vector_8
+                0x000000ca                __vector_18
+                0x000000ca                __vector_20
+ .text          0x000000ce        0x0 ./Angle_Detection.o
+ .text          0x000000ce        0x0 ./TIMERS.o
+ .text          0x000000ce        0x0 ./UART.o
+ .text          0x000000ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .text          0x000000ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text          0x000000ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x000000ce                . = ALIGN (0x2)
+ *(.text.*)
+ .text.__vector_1
+                0x000000ce       0x60 ./Angle_Detection.o
+                0x000000ce                __vector_1
+ .text.INT0_init
+                0x0000012e       0x38 ./Angle_Detection.o
+                0x0000012e                INT0_init
+ .text.angleDetection_INT0
+                0x00000166       0x38 ./Angle_Detection.o
+                0x00000166                angleDetection_INT0
+ .text.revCounter_TIMER2
+                0x0000019e       0x26 ./Angle_Detection.o
+                0x0000019e                revCounter_TIMER2
+ .text.main     0x000001c4       0x94 ./Angle_Detection.o
+                0x000001c4                main
+ .text.__vector_15
+                0x00000258       0x72 ./TIMERS.o
+                0x00000258                __vector_15
+ .text.__vector_16
+                0x000002ca       0x72 ./TIMERS.o
+                0x000002ca                __vector_16
+ .text.__vector_9
+                0x0000033c       0x72 ./TIMERS.o
+                0x0000033c                __vector_9
+ .text.__vector_10
+                0x000003ae       0x72 ./TIMERS.o
+                0x000003ae                __vector_10
+ .text.__vector_12
+                0x00000420       0x72 ./TIMERS.o
+                0x00000420                __vector_12
+ .text.__vector_13
+                0x00000492       0x72 ./TIMERS.o
+                0x00000492                __vector_13
+ .text.__vector_24
+                0x00000504       0x72 ./TIMERS.o
+                0x00000504                __vector_24
+ .text.__vector_14
+                0x00000576       0x72 ./TIMERS.o
+                0x00000576                __vector_14
+ .text.__vector_26
+                0x000005e8       0x72 ./TIMERS.o
+                0x000005e8                __vector_26
+ .text.__vector_27
+                0x0000065a       0x72 ./TIMERS.o
+                0x0000065a                __vector_27
+ .text.__vector_28
+                0x000006cc       0x72 ./TIMERS.o
+                0x000006cc                __vector_28
+ .text.__vector_29
+                0x0000073e       0x72 ./TIMERS.o
+                0x0000073e                __vector_29
+ .text.TIMER0_init
+                0x000007b0      0x160 ./TIMERS.o
+                0x000007b0                TIMER0_init
+ .text.TIMER0_resetTimer
+                0x00000910       0x14 ./TIMERS.o
+                0x00000910                TIMER0_resetTimer
+ .text.TIMER0_stopTimer
+                0x00000924       0x1c ./TIMERS.o
+                0x00000924                TIMER0_stopTimer
+ .text.TIMER0_restartTimer
+                0x00000940       0x2e ./TIMERS.o
+                0x00000940                TIMER0_restartTimer
+ .text.TIMER0_ticks
+                0x0000096e       0x1c ./TIMERS.o
+                0x0000096e                TIMER0_ticks
+ .text.TIMER0_callBack
+                0x0000098a       0x24 ./TIMERS.o
+                0x0000098a                TIMER0_callBack
+ .text.TIMER0_deinit
+                0x000009ae       0x14 ./TIMERS.o
+                0x000009ae                TIMER0_deinit
+ .text.TIMER2_init
+                0x000009c2      0x112 ./TIMERS.o
+                0x000009c2                TIMER2_init
+ .text.TIMER2_resetTimer
+                0x00000ad4       0x14 ./TIMERS.o
+                0x00000ad4                TIMER2_resetTimer
+ .text.TIMER2_stopTimer
+                0x00000ae8       0x1c ./TIMERS.o
+                0x00000ae8                TIMER2_stopTimer
+ .text.TIMER2_restartTimer
+                0x00000b04       0x2e ./TIMERS.o
+                0x00000b04                TIMER2_restartTimer
+ .text.TIMER2_ticks
+                0x00000b32       0x1c ./TIMERS.o
+                0x00000b32                TIMER2_ticks
+ .text.TIMER2_callBack
+                0x00000b4e       0x24 ./TIMERS.o
+                0x00000b4e                TIMER2_callBack
+ .text.TIMER2_deinit
+                0x00000b72       0x14 ./TIMERS.o
+                0x00000b72                TIMER2_deinit
+ .text.TIMER1_init
+                0x00000b86      0x308 ./TIMERS.o
+                0x00000b86                TIMER1_init
+ .text.TIMER1_resetTimer
+                0x00000e8e       0x16 ./TIMERS.o
+                0x00000e8e                TIMER1_resetTimer
+ .text.TIMER1_stopTimer
+                0x00000ea4       0x1c ./TIMERS.o
+                0x00000ea4                TIMER1_stopTimer
+ .text.TIMER1_restartTimer
+                0x00000ec0       0x2e ./TIMERS.o
+                0x00000ec0                TIMER1_restartTimer
+ .text.TIMER1_Ticks
+                0x00000eee       0x3a ./TIMERS.o
+                0x00000eee                TIMER1_Ticks
+ .text.TIMER1_setCallBack
+                0x00000f28       0x24 ./TIMERS.o
+                0x00000f28                TIMER1_setCallBack
+ .text.TIMER1_deinit
+                0x00000f4c       0x20 ./TIMERS.o
+                0x00000f4c                TIMER1_deinit
+ .text.TIMER3_init
+                0x00000f6c      0x320 ./TIMERS.o
+                0x00000f6c                TIMER3_init
+ .text.TIMER3_resetTimer
+                0x0000128c       0x16 ./TIMERS.o
+                0x0000128c                TIMER3_resetTimer
+ .text.TIMER3_stopTimer
+                0x000012a2       0x1c ./TIMERS.o
+                0x000012a2                TIMER3_stopTimer
+ .text.TIMER3_restartTimer
+                0x000012be       0x2e ./TIMERS.o
+                0x000012be                TIMER3_restartTimer
+ .text.TIMER3_Ticks
+                0x000012ec       0x3a ./TIMERS.o
+                0x000012ec                TIMER3_Ticks
+ .text.TIMER3_setCallBack
+                0x00001326       0x24 ./TIMERS.o
+                0x00001326                TIMER3_setCallBack
+ .text.TIMER3_deinit
+                0x0000134a       0x20 ./TIMERS.o
+                0x0000134a                TIMER3_deinit
+ .text.UART0_init
+                0x0000136a      0x12a ./UART.o
+                0x0000136a                UART0_init
+ .text.UART0_sendByte
+                0x00001494       0x2e ./UART.o
+                0x00001494                UART0_sendByte
+ .text.UART0_receiveByte
+                0x000014c2       0x1e ./UART.o
+                0x000014c2                UART0_receiveByte
+ .text.UART0_sendString
+                0x000014e0       0x38 ./UART.o
+                0x000014e0                UART0_sendString
+ .text.UART0_receiveString
+                0x00001518       0x42 ./UART.o
+                0x00001518                UART0_receiveString
+ .text.UART1_init
+                0x0000155a      0x12a ./UART.o
+                0x0000155a                UART1_init
+ .text.UART1_sendByte
+                0x00001684       0x2e ./UART.o
+                0x00001684                UART1_sendByte
+ .text.UART1_receiveByte
+                0x000016b2       0x1e ./UART.o
+                0x000016b2                UART1_receiveByte
+ .text.UART1_sendString
+                0x000016d0       0x38 ./UART.o
+                0x000016d0                UART1_sendString
+ .text.UART1_receiveString
+                0x00001708       0x42 ./UART.o
+                0x00001708                UART1_receiveString
+ .text.libgcc   0x0000174a       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                0x0000174a                __udivmodsi4
+ .text.libgcc   0x0000178e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x0000178e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x0000178e                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000178e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                0x0000178e                exit
+                0x0000178e                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000178e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001792                _etext = .
+
+.data           0x00800100       0x32 load address 0x00001792
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .data          0x00800100       0x2a ./Angle_Detection.o
+ .data          0x0080012a        0x0 ./TIMERS.o
+ .data          0x0080012a        0x0 ./UART.o
+ .data          0x0080012a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .data          0x0080012a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .data          0x0080012a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ .rodata.C.6.1477
+                0x0080012a        0x7 ./Angle_Detection.o
+ *(.gnu.linkonce.d*)
+                0x00800132                . = ALIGN (0x2)
+ *fill*         0x00800131        0x1 00
+                0x00800132                _edata = .
+                0x00800132                PROVIDE (__data_end, .)
+
+.bss            0x00800132        0xe
+                0x00800132                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800132        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .bss           0x00800132        0x0 ./Angle_Detection.o
+ .bss           0x00800132        0x0 ./TIMERS.o
+ .bss           0x00800132        0x0 ./UART.o
+ .bss           0x00800132        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .bss           0x00800132        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .bss           0x00800132        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ .bss.rev       0x00800132        0x1 ./Angle_Detection.o
+                0x00800132                rev
+ .bss.ticks     0x00800133        0x1 ./Angle_Detection.o
+                0x00800133                ticks
+ .bss.g_TIMER0_callBackPtr
+                0x00800134        0x2 ./TIMERS.o
+ .bss.g_TIMER2_callBackPtr
+                0x00800136        0x2 ./TIMERS.o
+ .bss.g_TIMER1_callBackPtr
+                0x00800138        0x2 ./TIMERS.o
+ .bss.g_TIMER3_callBackPtr
+                0x0080013a        0x2 ./TIMERS.o
+ .bss.g_T0clock
+                0x0080013c        0x1 ./TIMERS.o
+ .bss.g_T1clock
+                0x0080013d        0x1 ./TIMERS.o
+ .bss.g_T2clock
+                0x0080013e        0x1 ./TIMERS.o
+ .bss.g_T3clock
+                0x0080013f        0x1 ./TIMERS.o
+ *(COMMON)
+                0x00800140                PROVIDE (__bss_end, .)
+                0x00001792                __data_load_start = LOADADDR (.data)
+                0x000017c4                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800140        0x0
+                0x00800140                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800140                PROVIDE (__noinit_end, .)
+                0x00800140                _end = .
+                0x00800140                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000     0x1b0c
+ *(.stab)
+ .stab          0x00000000      0x678 ./Angle_Detection.o
+ .stab          0x00000678      0xfc0 ./TIMERS.o
+                               0x1284 (size before relaxing)
+ .stab          0x00001638      0x4d4 ./UART.o
+                                0x7b0 (size before relaxing)
+
+.stabstr        0x00000000     0x13cd
+ *(.stabstr)
+ .stabstr       0x00000000     0x13cd ./Angle_Detection.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(Angle_Detection.elf elf32-avr)
+LOAD linker stubs
