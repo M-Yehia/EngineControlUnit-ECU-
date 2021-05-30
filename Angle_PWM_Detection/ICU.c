@@ -6,7 +6,7 @@
  *
  * Description: Source file for the AVR ICU driver
  *
- * Author: Mohamed Tarek
+ * Author: Mohamed Yehia
  *
  *******************************************************************************/
 
@@ -45,7 +45,8 @@ ISR(TIMER3_CAPT_vect)
 void ICU_init(const ICU_ConfigType * Config_Ptr)
 {
 	/* Configure ICP3/PE3 as i/p pin */
-	DDRE &= ~(1<<PE7);
+	CLEAR_BIT(DDRE,PE7);
+	SET_BIT(PORTE,PE7);
 
 	/* Timer1 always operates in Normal Mode */
 	TCCR3C = (1<<FOC1A) | (1<<FOC1B) | (1<<FOC1C);

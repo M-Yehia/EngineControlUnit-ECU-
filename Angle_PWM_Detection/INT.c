@@ -19,9 +19,9 @@ ISR(INT0_vect)
 
 void INT0_init(void)
 {
-	SET_BIT(EICRA,ISC00);
 	SET_BIT(EICRA,ISC01);
 	SET_BIT(EIMSK,INT0);
+	SET_BIT(PORTD,PD0);
 
 }
 

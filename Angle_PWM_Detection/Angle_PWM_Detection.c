@@ -6,12 +6,12 @@
  */
 #include "Angle_PWM_Detection.h"
 
-volatile uint8 rev=0;
-volatile uint8 ticks=0 ;
+volatile uint8  rev=0;
+volatile uint8  ticks=0 ;
 volatile uint16 T_ON = 0;
 volatile uint16 T_OFF = 0;
 volatile uint16 T_TOTAL = 0;
-volatile uint8 PulseState = 0;
+volatile uint8  PulseState = 0;
 volatile uint8  DutyCycle = 0 ;
 
 
@@ -23,27 +23,27 @@ void PulseMeasure(void)
 	switch (PulseState)
 	{
 	case 1:
-		ICU_setEdgeDetectionType(FALLING);
+		ICU_setEdgeDetectionType(RISING);
 		ICU_clearTimerValue();
 
 		break;
 
 	case 2:
 		T_ON = ICU_getInputCaptureValue();
-		ICU_setEdgeDetectionType(RISING);
+		ICU_setEdgeDetectionType(FALLING);
 		ICU_clearTimerValue();
 
 		break;
 
 	case 3:
 		T_OFF = ICU_getInputCaptureValue();
-		ICU_setEdgeDetectionType(FALLING);
+		ICU_setEdgeDetectionType(RISING);
 		ICU_clearTimerValue();
 
 		break;
 
 	case 4:
-		ICU_setEdgeDetectionType(RISING);
+		ICU_setEdgeDetectionType(FALLING);
 		ICU_clearTimerValue();
 		PulseState = 0;
 
@@ -103,7 +103,7 @@ int main(void)
 	sei();
 
 
-	ICU_ConfigType ICU_Config = { .clock = ICU_F_CPU_8, .edge = RISING };
+	ICU_ConfigType ICU_Config = { .clock = ICU_F_CPU_8, .edge = FALLING };
 	ICU_init(&ICU_Config);
 	ICU_clearTimerValue();
 	ICU_setCallBack(PulseMeasure);
