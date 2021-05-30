@@ -163,7 +163,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2f34
+.text           0x00000000     0x2f42
  *(.vectors)
  .vectors       0x00000000       0x8c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
                 0x00000000                __vectors
@@ -322,192 +322,192 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x00001310       0x72 ./INT.o
                 0x00001310                __vector_1
  .text.INT0_init
-                0x00001382       0x38 ./INT.o
+                0x00001382       0x46 ./INT.o
                 0x00001382                INT0_init
  .text.INT0_setCallBack
-                0x000013ba       0x24 ./INT.o
-                0x000013ba                INT0_setCallBack
+                0x000013c8       0x24 ./INT.o
+                0x000013c8                INT0_setCallBack
  .text.__vector_15
-                0x000013de       0x72 ./TIMERS.o
-                0x000013de                __vector_15
+                0x000013ec       0x72 ./TIMERS.o
+                0x000013ec                __vector_15
  .text.__vector_16
-                0x00001450       0x72 ./TIMERS.o
-                0x00001450                __vector_16
+                0x0000145e       0x72 ./TIMERS.o
+                0x0000145e                __vector_16
  .text.__vector_9
-                0x000014c2       0x72 ./TIMERS.o
-                0x000014c2                __vector_9
+                0x000014d0       0x72 ./TIMERS.o
+                0x000014d0                __vector_9
  .text.__vector_10
-                0x00001534       0x72 ./TIMERS.o
-                0x00001534                __vector_10
+                0x00001542       0x72 ./TIMERS.o
+                0x00001542                __vector_10
  .text.__vector_12
-                0x000015a6       0x72 ./TIMERS.o
-                0x000015a6                __vector_12
+                0x000015b4       0x72 ./TIMERS.o
+                0x000015b4                __vector_12
  .text.__vector_13
-                0x00001618       0x72 ./TIMERS.o
-                0x00001618                __vector_13
+                0x00001626       0x72 ./TIMERS.o
+                0x00001626                __vector_13
  .text.__vector_24
-                0x0000168a       0x72 ./TIMERS.o
-                0x0000168a                __vector_24
+                0x00001698       0x72 ./TIMERS.o
+                0x00001698                __vector_24
  .text.__vector_14
-                0x000016fc       0x72 ./TIMERS.o
-                0x000016fc                __vector_14
+                0x0000170a       0x72 ./TIMERS.o
+                0x0000170a                __vector_14
  .text.__vector_26
-                0x0000176e       0x72 ./TIMERS.o
-                0x0000176e                __vector_26
+                0x0000177c       0x72 ./TIMERS.o
+                0x0000177c                __vector_26
  .text.__vector_27
-                0x000017e0       0x72 ./TIMERS.o
-                0x000017e0                __vector_27
+                0x000017ee       0x72 ./TIMERS.o
+                0x000017ee                __vector_27
  .text.__vector_28
-                0x00001852       0x72 ./TIMERS.o
-                0x00001852                __vector_28
+                0x00001860       0x72 ./TIMERS.o
+                0x00001860                __vector_28
  .text.__vector_29
-                0x000018c4       0x72 ./TIMERS.o
-                0x000018c4                __vector_29
+                0x000018d2       0x72 ./TIMERS.o
+                0x000018d2                __vector_29
  .text.TIMER0_init
-                0x00001936      0x160 ./TIMERS.o
-                0x00001936                TIMER0_init
+                0x00001944      0x160 ./TIMERS.o
+                0x00001944                TIMER0_init
  .text.TIMER0_resetTimer
-                0x00001a96       0x14 ./TIMERS.o
-                0x00001a96                TIMER0_resetTimer
+                0x00001aa4       0x14 ./TIMERS.o
+                0x00001aa4                TIMER0_resetTimer
  .text.TIMER0_stopTimer
-                0x00001aaa       0x1c ./TIMERS.o
-                0x00001aaa                TIMER0_stopTimer
+                0x00001ab8       0x1c ./TIMERS.o
+                0x00001ab8                TIMER0_stopTimer
  .text.TIMER0_restartTimer
-                0x00001ac6       0x2e ./TIMERS.o
-                0x00001ac6                TIMER0_restartTimer
+                0x00001ad4       0x2e ./TIMERS.o
+                0x00001ad4                TIMER0_restartTimer
  .text.TIMER0_ticks
-                0x00001af4       0x1c ./TIMERS.o
-                0x00001af4                TIMER0_ticks
+                0x00001b02       0x1c ./TIMERS.o
+                0x00001b02                TIMER0_ticks
  .text.TIMER0_callBack
-                0x00001b10       0x24 ./TIMERS.o
-                0x00001b10                TIMER0_callBack
+                0x00001b1e       0x24 ./TIMERS.o
+                0x00001b1e                TIMER0_callBack
  .text.TIMER0_deinit
-                0x00001b34       0x14 ./TIMERS.o
-                0x00001b34                TIMER0_deinit
+                0x00001b42       0x14 ./TIMERS.o
+                0x00001b42                TIMER0_deinit
  .text.TIMER2_init
-                0x00001b48      0x112 ./TIMERS.o
-                0x00001b48                TIMER2_init
+                0x00001b56      0x112 ./TIMERS.o
+                0x00001b56                TIMER2_init
  .text.TIMER2_resetTimer
-                0x00001c5a       0x14 ./TIMERS.o
-                0x00001c5a                TIMER2_resetTimer
+                0x00001c68       0x14 ./TIMERS.o
+                0x00001c68                TIMER2_resetTimer
  .text.TIMER2_stopTimer
-                0x00001c6e       0x1c ./TIMERS.o
-                0x00001c6e                TIMER2_stopTimer
+                0x00001c7c       0x1c ./TIMERS.o
+                0x00001c7c                TIMER2_stopTimer
  .text.TIMER2_restartTimer
-                0x00001c8a       0x2e ./TIMERS.o
-                0x00001c8a                TIMER2_restartTimer
+                0x00001c98       0x2e ./TIMERS.o
+                0x00001c98                TIMER2_restartTimer
  .text.TIMER2_ticks
-                0x00001cb8       0x1c ./TIMERS.o
-                0x00001cb8                TIMER2_ticks
+                0x00001cc6       0x1c ./TIMERS.o
+                0x00001cc6                TIMER2_ticks
  .text.TIMER2_callBack
-                0x00001cd4       0x24 ./TIMERS.o
-                0x00001cd4                TIMER2_callBack
+                0x00001ce2       0x24 ./TIMERS.o
+                0x00001ce2                TIMER2_callBack
  .text.TIMER2_deinit
-                0x00001cf8       0x14 ./TIMERS.o
-                0x00001cf8                TIMER2_deinit
+                0x00001d06       0x14 ./TIMERS.o
+                0x00001d06                TIMER2_deinit
  .text.TIMER1_init
-                0x00001d0c      0x308 ./TIMERS.o
-                0x00001d0c                TIMER1_init
+                0x00001d1a      0x308 ./TIMERS.o
+                0x00001d1a                TIMER1_init
  .text.TIMER1_resetTimer
-                0x00002014       0x16 ./TIMERS.o
-                0x00002014                TIMER1_resetTimer
+                0x00002022       0x16 ./TIMERS.o
+                0x00002022                TIMER1_resetTimer
  .text.TIMER1_stopTimer
-                0x0000202a       0x1c ./TIMERS.o
-                0x0000202a                TIMER1_stopTimer
+                0x00002038       0x1c ./TIMERS.o
+                0x00002038                TIMER1_stopTimer
  .text.TIMER1_restartTimer
-                0x00002046       0x2e ./TIMERS.o
-                0x00002046                TIMER1_restartTimer
+                0x00002054       0x2e ./TIMERS.o
+                0x00002054                TIMER1_restartTimer
  .text.TIMER1_Ticks
-                0x00002074       0x3a ./TIMERS.o
-                0x00002074                TIMER1_Ticks
+                0x00002082       0x3a ./TIMERS.o
+                0x00002082                TIMER1_Ticks
  .text.TIMER1_setCallBack
-                0x000020ae       0x24 ./TIMERS.o
-                0x000020ae                TIMER1_setCallBack
+                0x000020bc       0x24 ./TIMERS.o
+                0x000020bc                TIMER1_setCallBack
  .text.TIMER1_deinit
-                0x000020d2       0x20 ./TIMERS.o
-                0x000020d2                TIMER1_deinit
+                0x000020e0       0x20 ./TIMERS.o
+                0x000020e0                TIMER1_deinit
  .text.TIMER3_init
-                0x000020f2      0x320 ./TIMERS.o
-                0x000020f2                TIMER3_init
+                0x00002100      0x320 ./TIMERS.o
+                0x00002100                TIMER3_init
  .text.TIMER3_resetTimer
-                0x00002412       0x16 ./TIMERS.o
-                0x00002412                TIMER3_resetTimer
+                0x00002420       0x16 ./TIMERS.o
+                0x00002420                TIMER3_resetTimer
  .text.TIMER3_stopTimer
-                0x00002428       0x1c ./TIMERS.o
-                0x00002428                TIMER3_stopTimer
+                0x00002436       0x1c ./TIMERS.o
+                0x00002436                TIMER3_stopTimer
  .text.TIMER3_restartTimer
-                0x00002444       0x2e ./TIMERS.o
-                0x00002444                TIMER3_restartTimer
+                0x00002452       0x2e ./TIMERS.o
+                0x00002452                TIMER3_restartTimer
  .text.TIMER3_Ticks
-                0x00002472       0x3a ./TIMERS.o
-                0x00002472                TIMER3_Ticks
+                0x00002480       0x3a ./TIMERS.o
+                0x00002480                TIMER3_Ticks
  .text.TIMER3_setCallBack
-                0x000024ac       0x24 ./TIMERS.o
-                0x000024ac                TIMER3_setCallBack
+                0x000024ba       0x24 ./TIMERS.o
+                0x000024ba                TIMER3_setCallBack
  .text.TIMER3_deinit
-                0x000024d0       0x20 ./TIMERS.o
-                0x000024d0                TIMER3_deinit
+                0x000024de       0x20 ./TIMERS.o
+                0x000024de                TIMER3_deinit
  .text.UART0_init
-                0x000024f0      0x12a ./UART.o
-                0x000024f0                UART0_init
+                0x000024fe      0x12a ./UART.o
+                0x000024fe                UART0_init
  .text.UART0_sendByte
-                0x0000261a       0x2e ./UART.o
-                0x0000261a                UART0_sendByte
+                0x00002628       0x2e ./UART.o
+                0x00002628                UART0_sendByte
  .text.UART0_receiveByte
-                0x00002648       0x1e ./UART.o
-                0x00002648                UART0_receiveByte
+                0x00002656       0x1e ./UART.o
+                0x00002656                UART0_receiveByte
  .text.UART0_sendString
-                0x00002666       0x38 ./UART.o
-                0x00002666                UART0_sendString
+                0x00002674       0x38 ./UART.o
+                0x00002674                UART0_sendString
  .text.UART0_receiveString
-                0x0000269e       0x42 ./UART.o
-                0x0000269e                UART0_receiveString
+                0x000026ac       0x42 ./UART.o
+                0x000026ac                UART0_receiveString
  .text.UART1_init
-                0x000026e0      0x12a ./UART.o
-                0x000026e0                UART1_init
+                0x000026ee      0x12a ./UART.o
+                0x000026ee                UART1_init
  .text.UART1_sendByte
-                0x0000280a       0x2e ./UART.o
-                0x0000280a                UART1_sendByte
+                0x00002818       0x2e ./UART.o
+                0x00002818                UART1_sendByte
  .text.UART1_receiveByte
-                0x00002838       0x1e ./UART.o
-                0x00002838                UART1_receiveByte
+                0x00002846       0x1e ./UART.o
+                0x00002846                UART1_receiveByte
  .text.UART1_sendString
-                0x00002856       0x38 ./UART.o
-                0x00002856                UART1_sendString
+                0x00002864       0x38 ./UART.o
+                0x00002864                UART1_sendString
  .text.UART1_receiveString
-                0x0000288e       0x42 ./UART.o
-                0x0000288e                UART1_receiveString
- .text.libgcc   0x000028d0       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
-                0x000028d0                __udivmodsi4
- .text.libgcc   0x00002914        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
- .text.libgcc   0x00002914        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00002914       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_prologue.o)
-                0x00002914                __prologue_saves__
- .text.libgcc   0x0000294c       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_epilogue.o)
-                0x0000294c                __epilogue_restores__
+                0x0000289c       0x42 ./UART.o
+                0x0000289c                UART1_receiveString
+ .text.libgcc   0x000028de       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                0x000028de                __udivmodsi4
+ .text.libgcc   0x00002922        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00002922        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00002922       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_prologue.o)
+                0x00002922                __prologue_saves__
+ .text.libgcc   0x0000295a       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_epilogue.o)
+                0x0000295a                __epilogue_restores__
  .text.avr-libc
-                0x00002982       0x62 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(sprintf.o)
-                0x00002982                sprintf
+                0x00002990       0x62 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(sprintf.o)
+                0x00002990                sprintf
  .text.avr-libc
-                0x000029e4      0x40c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
-                0x000029e4                vfprintf
+                0x000029f2      0x40c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+                0x000029f2                vfprintf
  .text.avr-libc
-                0x00002df0       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
-                0x00002df0                strnlen_P
+                0x00002dfe       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+                0x00002dfe                strnlen_P
  .text.avr-libc
-                0x00002e06       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(strnlen.o)
-                0x00002e06                strnlen
+                0x00002e14       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(strnlen.o)
+                0x00002e14                strnlen
  .text.avr-libc
-                0x00002e1c       0x58 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(fputc.o)
-                0x00002e1c                fputc
+                0x00002e2a       0x58 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(fputc.o)
+                0x00002e2a                fputc
  .text.avr-libc
-                0x00002e74       0xbc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
-                0x00002e74                __ultoa_invert
-                0x00002f30                . = ALIGN (0x2)
+                0x00002e82       0xbc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+                0x00002e82                __ultoa_invert
+                0x00002f3e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002f30        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
-                0x00002f30                exit
-                0x00002f30                _exit
+ .fini9         0x00002f3e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                0x00002f3e                exit
+                0x00002f3e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -526,11 +526,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002f30        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .fini0         0x00002f3e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002f34                _etext = .
+                0x00002f42                _etext = .
 
-.data           0x00800100      0x178 load address 0x00002f34
+.data           0x00800100      0x178 load address 0x00002f42
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
@@ -648,8 +648,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x00800291        0x1 ./TIMERS.o
  *(COMMON)
                 0x00800292                PROVIDE (__bss_end, .)
-                0x00002f34                __data_load_start = LOADADDR (.data)
-                0x000030ac                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00002f42                __data_load_start = LOADADDR (.data)
+                0x000030ba                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800292        0x0
                 0x00800292                PROVIDE (__noinit_start, .)
@@ -674,16 +674,16 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x22bc
+.stab           0x00000000     0x22c8
  *(.stab)
  .stab          0x00000000      0x8ac ./Angle_PWM_Detection.o
  .stab          0x000008ac      0x360 ./ICU.o
                                 0x60c (size before relaxing)
- .stab          0x00000c0c      0x21c ./INT.o
-                                0x480 (size before relaxing)
- .stab          0x00000e28      0xfc0 ./TIMERS.o
+ .stab          0x00000c0c      0x228 ./INT.o
+                                0x48c (size before relaxing)
+ .stab          0x00000e34      0xfc0 ./TIMERS.o
                                0x1284 (size before relaxing)
- .stab          0x00001de8      0x4d4 ./UART.o
+ .stab          0x00001df4      0x4d4 ./UART.o
                                 0x7b0 (size before relaxing)
 
 .stabstr        0x00000000     0x177d

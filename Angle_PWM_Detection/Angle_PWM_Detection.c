@@ -40,6 +40,7 @@ void PulseMeasure(void)
 		ICU_setEdgeDetectionType(RISING);
 		ICU_clearTimerValue();
 
+
 		break;
 
 	case 4:
@@ -63,6 +64,9 @@ void angleDetection_INT0(void)
 	ticks = TCNT2;
 
 	UART0_sendByte('\r');
+	dutyCycle_Calc();
+
+
 	UART0_sendString("Number of ticks = ");
 	sprintf(arr1, "%d", ticks);
 	UART0_sendString(arr1);
@@ -74,7 +78,6 @@ void angleDetection_INT0(void)
 	UART0_sendByte('\r');
 
 
-	dutyCycle_Calc();
 }
 
 
