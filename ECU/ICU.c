@@ -6,7 +6,7 @@
  *
  * Description: Source file for the AVR ICU driver
  *
- * Author: Mohamed Tarek
+ * Author: Mohamed Yehia
  *
  *******************************************************************************/
 
@@ -110,7 +110,7 @@ void ICU_clearTimerValue(void)
 /*
  * Description: Function to disable the Timer1 to stop the ICU Driver
  */
-void ICU_DeInit(void)
+void ICU_deInit(void)
 {
 	/* Clear All Timer1 Registers */
 	TCCR3A = 0;

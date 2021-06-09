@@ -17,5 +17,11 @@
                            Functions Prototypes
  --------------------------------------------------------------------------*/
 
+void startEngine (void);
+
+void APP_edgeProcessing(void);
+
+void revCounter_TIMER2 (void);
+
 
 #endif /* ECU_H_ */

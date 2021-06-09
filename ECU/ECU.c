@@ -45,22 +45,37 @@ uint8 main (void)
 	TIMER2_init(&timer2_config);
 	TIMER2_callBack(revCounter_TIMER2);
 
-	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =injection_duty_cycle, .OC=NON_INVERTING,
+	/*--------------------- Description ----------------------
+	 - Channel A -> Injection
+	 - Channel B -> Ignition
+	 ---------------------------------------------------------*/
+	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=30 ,.OCRValue =injection_duty_cycle, .OC=NON_INVERTING,
 	                                   .OCR1BValue=ignition_duty_cycle , .OC1B=NON_INVERTING};
 	TIMER1_init(&timer1_config);
+	TIMER1_stopTimer();
 
 	DDRA = 0xFF;
 
 	startEngine();
+	ICU_deInit();
 	while(1)
 	{
 
-		/**/
+		/*------------------PORTA Pins Description-----------------
+		                    Firing Order (1,3,4,2)
+		 - PA0 -> Injection 1
+		 - PA1 -> Injection 3
+		 - PA2 -> Injection 4
+		 - PA3 -> Injection 2
+		 - PA4 -> Ignition Cylinder 1 & 4
+		 - PA5 -> Ignition Cylinder 2 & 3
+		 ----------------------------------------------------------- */
 		if (rev==0)
 		{
 			/**/
 			if(TCNT2 == ignition_cylinder1_4_angle_on)
 			{
+				Timer1_restartTimer();
 				SET_BIT(PORTA,PA4);
 			}
 			else if(TCNT2 == ignition_cylinder1_4_angle_off)
@@ -70,29 +85,29 @@ uint8 main (void)
 			/**/
 			else if(TCNT2 == injection_cylinder1_4_angle_on)
 			{
-				SET_BIT(PORTA,PA3);
+				SET_BIT(PORTA,PA2);
 			}
 			else if(TCNT2 == injection_cylinder1_4_angle_off)
 			{
-				CLEAR_BIT(PORTA,PA3);
+				CLEAR_BIT(PORTA,PA2);
 			}
 			/**/
 			else if(TCNT2 == ignition_cylinder2_3_angle_on)
 			{
-				SET_BIT(PORTA,PA6);
+				SET_BIT(PORTA,PA5);
 			}
 			else if(TCNT2 == ignition_cylinder2_3_angle_off)
 			{
-				CLEAR_BIT(PORTA,PA6);
+				CLEAR_BIT(PORTA,PA5);
 			}
 			/**/
 			else if(TCNT2 == injection_cylinder2_3_angle_on)
 			{
-				SET_BIT(PORTA,PA1);
+				SET_BIT(PORTA,PA3);
 			}
 			else if(TCNT2 == injection_cylinder2_3_angle_off)
 			{
-				CLEAR_BIT(PORTA,PA1);
+				CLEAR_BIT(PORTA,PA3);
 			}
 		}
 
@@ -102,11 +117,11 @@ uint8 main (void)
 			/**/
 			if(TCNT2 == ignition_cylinder1_4_angle_on)
 			{
-				SET_BIT(PORTA,PA7);
+				SET_BIT(PORTA,PA4);
 			}
 			else if(TCNT2 == ignition_cylinder1_4_angle_off)
 			{
-				CLEAR_BIT(PORTA,PA7);
+				CLEAR_BIT(PORTA,PA4);
 			}
 			/**/
 			else if(TCNT2 == injection_cylinder1_4_angle_on)
@@ -129,11 +144,11 @@ uint8 main (void)
 			/**/
 			else if(TCNT2 == injection_cylinder2_3_angle_on)
 			{
-				SET_BIT(PORTA,PA2);
+				SET_BIT(PORTA,PA1);
 			}
 			else if(TCNT2 == injection_cylinder2_3_angle_off)
 			{
-				CLEAR_BIT(PORTA,PA2);
+				CLEAR_BIT(PORTA,PA1);
 			}
 		}
 	}
@@ -158,7 +173,6 @@ void startEngine (void)
 		{
 			if(g_edgeCount == 4)
 			{
-				ICU_DeInit(); /* Disable ICU Driver */
 				g_edgeCount = 0;
 				/* calculate the period */
 				period = ((g_timePeriodPlusHigh - g_timeHigh) / 1000);

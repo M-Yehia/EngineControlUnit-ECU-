@@ -13,7 +13,10 @@ volatile uint16 T_OFF = 0;
 volatile uint16 T_TOTAL = 0;
 volatile uint8  PulseState = 0;
 volatile uint8  DutyCycle = 0 ;
-
+volatile uint8  g_edgeCount = 0;
+volatile uint8  g_timeHigh = 0;
+volatile uint8  g_timePeriodPlusHigh = 0;
+volatile uint8  g_timePeriod = 0;
 
 void PulseMeasure(void)
 {
@@ -23,29 +26,29 @@ void PulseMeasure(void)
 	switch (PulseState)
 	{
 	case 1:
-		ICU_setEdgeDetectionType(RISING);
-		ICU_clearTimerValue();
+		ICU3_setEdgeDetectionType(RISING);
+		ICU3_clearTimerValue();
 
 		break;
 
 	case 2:
-		T_ON = ICU_getInputCaptureValue();
-		ICU_setEdgeDetectionType(FALLING);
-		ICU_clearTimerValue();
+		T_ON = ICU3_getInputCaptureValue();
+		ICU3_setEdgeDetectionType(FALLING);
+		ICU3_clearTimerValue();
 
 		break;
 
 	case 3:
-		T_OFF = ICU_getInputCaptureValue();
-		ICU_setEdgeDetectionType(RISING);
-		ICU_clearTimerValue();
+		T_OFF = ICU3_getInputCaptureValue();
+		ICU3_setEdgeDetectionType(RISING);
+		ICU3_clearTimerValue();
 
 
 		break;
 
 	case 4:
-		ICU_setEdgeDetectionType(FALLING);
-		ICU_clearTimerValue();
+		ICU3_setEdgeDetectionType(FALLING);
+		ICU3_clearTimerValue();
 		PulseState = 0;
 
 		break;
@@ -56,7 +59,54 @@ void PulseMeasure(void)
 	}
 }
 
+void periodMeasure (void)
+{
+	uint8 arr[4];
+	uint8 period = 0;
+	g_edgeCount++;
+	if(g_edgeCount == 1)
+	{
+		/*
+		 * Clear the timer counter register to start measurements from the
+		 * first detected rising edge
+		 */
+		ICU1_clearTimerValue();
+		/* Detect falling edge */
+		ICU1_setEdgeDetectionType(FALLING);
+	}
+	else if(g_edgeCount == 2)
+	{
+		/* Store the High time value */
+		g_timeHigh = ICU1_getInputCaptureValue();
+		/* Detect rising edge */
+		ICU1_setEdgeDetectionType(RISING);
+	}
+	else if(g_edgeCount == 3)
+	{
+		/* Store the Period time value */
+		g_timePeriod = ICU1_getInputCaptureValue();
+		/* Detect falling edge */
+		ICU1_setEdgeDetectionType(FALLING);
+	}
+	else if(g_edgeCount == 4)
+	{
+		/* Store the Period time value + High time value */
+		g_timePeriodPlusHigh = ICU1_getInputCaptureValue();
+		/* Clear the timer counter register to start measurements again */
+		ICU1_clearTimerValue();
+		/* Detect rising edge */
+		ICU1_setEdgeDetectionType(RISING);
+		g_edgeCount = 0;
+		/* calculate the period */
+		period = ((g_timePeriodPlusHigh - g_timeHigh) / 1000);
+	}
 
+	sprintf(arr, "%d", (uint8)period);
+	UART0_sendString("Period of each crank tooth : ");
+	UART0_sendString(arr);
+	UART0_sendString(" %");
+	UART0_sendByte('\r');
+}
 void angleDetection_INT0(void)
 {
 	uint8 arr1[3];
@@ -65,6 +115,7 @@ void angleDetection_INT0(void)
 
 	UART0_sendByte('\r');
 	dutyCycle_Calc();
+	periodMeasure();
 
 
 	UART0_sendString("Number of ticks = ");
@@ -79,7 +130,6 @@ void angleDetection_INT0(void)
 
 
 }
-
 
 void dutyCycle_Calc(void)
 {
@@ -106,10 +156,15 @@ int main(void)
 	sei();
 
 
-	ICU_ConfigType ICU_Config = { .clock = ICU_F_CPU_8, .edge = FALLING };
-	ICU_init(&ICU_Config);
-	ICU_clearTimerValue();
-	ICU_setCallBack(PulseMeasure);
+	ICU_ConfigType ICU1_Config = { .clock = ICU_F_CPU_8, .edge = RISING };
+	ICU1_init(&ICU1_Config);
+	ICU1_clearTimerValue();
+	ICU1_setCallBack(periodMeasure);
+
+	ICU_ConfigType ICU3_Config = { .clock = ICU_F_CPU_8, .edge = FALLING };
+	ICU3_init(&ICU3_Config);
+	ICU3_clearTimerValue();
+	ICU3_setCallBack(PulseMeasure);
 
 
 	TIMER_ConfigType TIMER2_Config ={.clock=EXTERNAL_RISING_EDGE, .mode=COMP, .OCRValue=60 };
