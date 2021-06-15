@@ -60,8 +60,8 @@ ISR(TIMER3_CAPT_vect)
 void ICU1_init(const ICU_ConfigType * Config_Ptr)
 {
 	/* Configure ICP3/PE3 as i/p pin */
-	CLEAR_BIT(DDRE,PE7);
-	SET_BIT(PORTE,PE7);
+	CLEAR_BIT(DDRE,PD4);
+	//SET_BIT(PORTE,PD4);
 
 	/* Timer1 always operates in Normal Mode */
 	TCCR1C = (1<<FOC1A) | (1<<FOC1B) | (1<<FOC1C);
@@ -83,7 +83,7 @@ void ICU1_init(const ICU_ConfigType * Config_Ptr)
 	ICR1 = 0;
 
 	/* Enable the Input Capture interrupt to generate an interrupt when edge is detected on ICP1/PD6 pin */
-	ETIMSK |= (1<<TICIE1);
+	TIMSK |= (1<<TICIE1);
 }
 
 /*
@@ -98,7 +98,7 @@ void ICU1_setCallBack(void(*a_ptr)(void))
 /*
  * Description: Function to set the required edge detection.
  */
-void ICU1_setEdgeDetectionType(const Icu_EdgeType a_edgeType)
+void ICU1_setEdgeDetectionType( Icu_EdgeType a_edgeType)
 {
 	/*
 	 * insert the required edge type in ICES1 bit in TCCR1B Register
@@ -154,7 +154,7 @@ void ICU3_init(const ICU_ConfigType * Config_Ptr)
 {
 	/* Configure ICP3/PE3 as i/p pin */
 	CLEAR_BIT(DDRE,PE7);
-	SET_BIT(PORTE,PE7);
+	//SET_BIT(PORTE,PE7);
 
 	/* Timer1 always operates in Normal Mode */
 	TCCR3C = (1<<FOC3A) | (1<<FOC3B) | (1<<FOC3C);
@@ -191,7 +191,7 @@ void ICU3_setCallBack(void(*a_ptr)(void))
 /*
 * Description: Function to set the required edge detection.
 */
-void ICU3_setEdgeDetectionType(const Icu_EdgeType a_edgeType)
+void ICU3_setEdgeDetectionType(Icu_EdgeType a_edgeType)
 {
 	/*
 	 * insert the required edge type in ICES1 bit in TCCR1B Register

@@ -28,6 +28,17 @@ endif
 
 -include ../makefile.defs
 
+OPTIONAL_TOOL_DEPS := \
+$(wildcard ../makefile.defs) \
+$(wildcard ../makefile.init) \
+$(wildcard ../makefile.targets) \
+
+
+BUILD_ARTIFACT_NAME := PWM_signalMeasuring
+BUILD_ARTIFACT_EXTENSION := elf
+BUILD_ARTIFACT_PREFIX :=
+BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
+
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
 PWM_signalMeasuring.lss \
@@ -40,20 +51,20 @@ sizedummy \
 all: PWM_signalMeasuring.elf secondary-outputs
 
 # Tool invocations
-PWM_signalMeasuring.elf: $(OBJS) $(USER_OBJS)
+PWM_signalMeasuring.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
 	avr-gcc -Wl,-Map,PWM_signalMeasuring.map -mmcu=atmega128 -o "PWM_signalMeasuring.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-PWM_signalMeasuring.lss: PWM_signalMeasuring.elf
+PWM_signalMeasuring.lss: PWM_signalMeasuring.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: AVR Create Extended Listing'
 	-avr-objdump -h -S PWM_signalMeasuring.elf  >"PWM_signalMeasuring.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: PWM_signalMeasuring.elf
+sizedummy: PWM_signalMeasuring.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega128 PWM_signalMeasuring.elf
 	@echo 'Finished building: $@'

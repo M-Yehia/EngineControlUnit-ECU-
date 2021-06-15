@@ -28,6 +28,17 @@ endif
 
 -include ../makefile.defs
 
+OPTIONAL_TOOL_DEPS := \
+$(wildcard ../makefile.defs) \
+$(wildcard ../makefile.init) \
+$(wildcard ../makefile.targets) \
+
+
+BUILD_ARTIFACT_NAME := PulsesCounter
+BUILD_ARTIFACT_EXTENSION := elf
+BUILD_ARTIFACT_PREFIX :=
+BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
+
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
 PulsesCounter.lss \
@@ -46,32 +57,32 @@ sizedummy \
 all: PulsesCounter.elf secondary-outputs
 
 # Tool invocations
-PulsesCounter.elf: $(OBJS) $(USER_OBJS)
+PulsesCounter.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
 	avr-gcc -Wl,-Map,PulsesCounter.map -mmcu=atmega16 -o "PulsesCounter.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-PulsesCounter.lss: PulsesCounter.elf
+PulsesCounter.lss: PulsesCounter.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: AVR Create Extended Listing'
 	-avr-objdump -h -S PulsesCounter.elf  >"PulsesCounter.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-PulsesCounter.hex: PulsesCounter.elf
+PulsesCounter.hex: PulsesCounter.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Create Flash image (ihex format)'
 	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PulsesCounter.elf  "PulsesCounter.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-PulsesCounter.eep: PulsesCounter.elf
+PulsesCounter.eep: PulsesCounter.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Create eeprom image (ihex format)'
 	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PulsesCounter.elf  "PulsesCounter.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: PulsesCounter.elf
+sizedummy: PulsesCounter.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega16 PulsesCounter.elf
 	@echo 'Finished building: $@'

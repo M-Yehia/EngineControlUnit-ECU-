@@ -48,7 +48,7 @@ void ICU_init(const ICU_ConfigType * Config_Ptr)
 	DDRE &= ~(1<<PE7);
 
 	/* Timer1 always operates in Normal Mode */
-	TCCR3C = (1<<FOC1A) | (1<<FOC1B) | (1<<FOC1C);
+	TCCR3C = (1<<FOC3A) | (1<<FOC1B) | (1<<FOC1C);
 
 	/*
 	 * insert the required clock value in the first three bits (CS30, CS31 and CS32)

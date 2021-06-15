@@ -56,6 +56,7 @@ void PulseMeasure(void)
 
 int main(void)
 {
+	uint8 arr[10];
 
 	ICU_ConfigType ICU_Config = { .clock=ICU_F_CPU_8,.edge=RISING };
 	ICU_init(&ICU_Config);
@@ -68,10 +69,11 @@ int main(void)
 
 	DutyCycle = ( ( (float)(T_ON)/( (float)T_ON + (float)T_OFF) ) * 100.00);
 
-	UART0_sendString("Duty Cycle is :");
-	UART0_sendByte((uint8)DutyCycle);
-	UART0_sendString("%");
-
+	sprintf(arr, "%d", (uint8)DutyCycle);
+	UART0_sendString("Duty Cycle is : ");
+	UART0_sendString(arr);
+	UART0_sendString(" %");
+	UART0_sendByte('\r');
 	while(1)
 	{
 
