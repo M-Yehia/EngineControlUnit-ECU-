@@ -20,7 +20,7 @@
           -  3. Select data size.
           -  4. Set baud rate.
           ----------------------------------------------------*/
-void UART0_init (const UART_Config *config_ptr)
+void UART0_init (const UART_ConfigType *config_ptr)
 {
 	/* U2X0 = 1 for double transmission speed for Asynchronous */
 	UCSR0A = (1<<U2X0);
@@ -125,7 +125,7 @@ void UART0_receiveString (uint8 *str)
           -  3. Select data size.
           -  4. Set baud rate.
           ----------------------------------------------------*/
-void UART1_init (const UART_Config *config_ptr)
+void UART1_init (const UART_ConfigType *config_ptr)
 {
 	/* U2X1 = 1 for double transmission speed for Asynchronous */
 	UCSR1A = (1<<U2X1);

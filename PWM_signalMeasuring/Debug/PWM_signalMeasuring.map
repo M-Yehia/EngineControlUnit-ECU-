@@ -65,6 +65,7 @@ Linker script and memory map
 Address of section .data set to 0x800100
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
 LOAD ./ICU.o
+LOAD ./Icu1.o
 LOAD ./PWM_signalMeasuring.o
 LOAD ./UART.o
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
@@ -252,6 +253,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x000000ca                __vector_18
                 0x000000ca                __vector_20
  .text          0x000000ce        0x0 ./ICU.o
+ .text          0x000000ce        0x0 ./Icu1.o
  .text          0x000000ce        0x0 ./PWM_signalMeasuring.o
  .text          0x000000ce        0x0 ./UART.o
  .text          0x000000ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
@@ -406,6 +408,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
  .data          0x00800100        0x0 ./ICU.o
+ .data          0x00800100        0x0 ./Icu1.o
  .data          0x00800100       0x17 ./PWM_signalMeasuring.o
  .data          0x00800117        0x0 ./UART.o
  .data          0x00800117        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
@@ -449,6 +452,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  *(.bss)
  .bss           0x00800226        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
  .bss           0x00800226        0x0 ./ICU.o
+ .bss           0x00800226        0x0 ./Icu1.o
  .bss           0x00800226        0x0 ./PWM_signalMeasuring.o
  .bss           0x00800226        0x0 ./UART.o
  .bss           0x00800226        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
@@ -518,17 +522,19 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000      0xe94
+.stab           0x00000000      0xf6c
  *(.stab)
  .stab          0x00000000      0x600 ./ICU.o
- .stab          0x00000600      0x3c0 ./PWM_signalMeasuring.o
+ .stab          0x00000600       0xd8 ./Icu1.o
+                                 0xe4 (size before relaxing)
+ .stab          0x000006d8      0x3c0 ./PWM_signalMeasuring.o
                                 0x66c (size before relaxing)
- .stab          0x000009c0      0x4d4 ./UART.o
+ .stab          0x00000a98      0x4d4 ./UART.o
                                 0x7b0 (size before relaxing)
 
-.stabstr        0x00000000      0xecf
+.stabstr        0x00000000      0xed9
  *(.stabstr)
- .stabstr       0x00000000      0xecf ./ICU.o
+ .stabstr       0x00000000      0xed9 ./ICU.o
 
 .stab.excl
  *(.stab.excl)

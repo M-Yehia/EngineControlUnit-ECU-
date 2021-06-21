@@ -22,7 +22,7 @@
  -------------------------------------------------------------------------*/
 
 typedef enum{
-	Disable,Even_Parity = 2, Odd_Parity
+	NO_PARITY,EVEN_PARITY = 2, ODD_PARITY
 }UART_ParityMode;
 
 typedef enum{
@@ -45,12 +45,12 @@ typedef struct{
 	UART_StopBitSelect stop_bit;
 	UART_DataSize      data_size;
 	UART_BaudRate      baud_rate;
-}UART_Config;
+}UART_ConfigType;
 /*-------------------------------------------------------------------------
                       Functions UART0 Prototypes
  -------------------------------------------------------------------------*/
 
-void UART0_init (const UART_Config *);
+void UART0_init (const UART_ConfigType *);
 
 void UART0_sendByte (const uint8);
 
@@ -60,11 +60,13 @@ void UART0_sendString (const uint8 *);
 
 void UART0_receiveString (uint8 *);
 
+void UART0_intgerToString(uint8 variable,uint8 *arr);
+
 /*-------------------------------------------------------------------------
                      Functions UART1 Prototypes
  -------------------------------------------------------------------------*/
 
-void UART1_init (const UART_Config *);
+void UART1_init (const UART_ConfigType *);
 
 void UART1_sendByte (const uint8);
 

@@ -9,27 +9,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .bss          0000000a  00800226  00800226  00001d94  2**0
                   ALLOC
-  3 .stab         00000e94  00000000  00000000  00001d94  2**2
+  3 .stab         00000f6c  00000000  00000000  00001d94  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000ecf  00000000  00000000  00002c28  2**0
+  4 .stabstr      00000ed9  00000000  00000000  00002d00  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 00000160  00000000  00000000  00003af7  2**0
+  5 .debug_aranges 00000160  00000000  00000000  00003bd9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_pubnames 000001b6  00000000  00000000  00003c57  2**0
+  6 .debug_pubnames 000001b6  00000000  00000000  00003d39  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   00001f0d  00000000  00000000  00003e0d  2**0
+  7 .debug_info   00001f0d  00000000  00000000  00003eef  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 000010d2  00000000  00000000  00005d1a  2**0
+  8 .debug_abbrev 000010d2  00000000  00000000  00005dfc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   00001030  00000000  00000000  00006dec  2**0
+  9 .debug_line   00001030  00000000  00000000  00006ece  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  00000180  00000000  00000000  00007e1c  2**2
+ 10 .debug_frame  00000180  00000000  00000000  00007f00  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    000002e7  00000000  00000000  00007f9c  2**0
+ 11 .debug_str    000002e7  00000000  00000000  00008080  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    000008f6  00000000  00000000  00008283  2**0
+ 12 .debug_loc    000008f6  00000000  00000000  00008367  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000050  00000000  00000000  00008b79  2**0
+ 13 .debug_ranges 00000050  00000000  00000000  00008c5d  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1835,7 +1835,7 @@ void ICU_init(const ICU_ConfigType * Config_Ptr)
      e36:	8c 93       	st	X, r24
 
 	/* Timer1 always operates in Normal Mode */
-	TCCR3C = (1<<FOC1A) | (1<<FOC1B) | (1<<FOC1C);
+	TCCR3C = (1<<FOC3A) | (1<<FOC1B) | (1<<FOC1C);
      e38:	ec e8       	ldi	r30, 0x8C	; 140
      e3a:	f0 e0       	ldi	r31, 0x00	; 0
      e3c:	80 ee       	ldi	r24, 0xE0	; 224
