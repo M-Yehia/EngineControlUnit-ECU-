@@ -15,20 +15,21 @@
 /* Global Variable to indicate the crank revolution   */
 uint8 rev = 0;
 uint8 injection_duty_cycle;
-uint8 ignition_duty_cycle;
+uint8 ignition_duty_cycle = 1.8 ; //3% = 1.8
 uint8 injection_cylinder1_4_angle_on;
 uint8 injection_cylinder1_4_angle_off;
 uint8 injection_cylinder2_3_angle_on;
 uint8 injection_cylinder2_3_angle_off;
-uint8 ignition_cylinder1_4_angle_on;
-uint8 ignition_cylinder1_4_angle_off;
-uint8 ignition_cylinder2_3_angle_on;
-uint8 ignition_cylinder2_3_angle_off;
+uint8 ignition_cylinder1_4_angle_on = 2;
+uint8 ignition_cylinder1_4_angle_off = 4;
+uint8 ignition_cylinder2_3_angle_on = 32;
+uint8 ignition_cylinder2_3_angle_off = 34;
 
 uint8  g_edgeCount = 0;
 uint16 g_timeHigh = 0;
 uint16 g_timePeriod = 0;
 uint16 g_timePeriodPlusHigh = 0;
+float32 g_period =0;
 
 
 /*-------------------------------------------------------------------------
@@ -39,8 +40,10 @@ uint8 main (void)
 {
 	sei();
 
-	ICU_ConfigType icu_config = {.clock=ICU_F_CPU_8, .edge=FALLING};
-	ICU_init(&icu_config);
+	ICU_ConfigType icu3_config = {.clock=ICU_F_CPU_8, .edge=FALLING};
+	ICU3_init(&icu3_config);
+	ICU3_setCallBack(APP_edgeProcessing);
+
 	TIMER_ConfigType timer2_config = { .clock=EXTERNAL_RISING_EDGE, .mode=COMP, .OCRValue = 60};
 	TIMER2_init(&timer2_config);
 	TIMER2_callBack(revCounter_TIMER2);
@@ -49,15 +52,17 @@ uint8 main (void)
 	 - Channel A -> Injection
 	 - Channel B -> Ignition
 	 ---------------------------------------------------------*/
-	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=30 ,.OCRValue =injection_duty_cycle, .OC=NON_INVERTING,
-	                                   .OCR1BValue=ignition_duty_cycle , .OC1B=NON_INVERTING};
+	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =ignition_duty_cycle, .OC=NON_INVERTING,
+	                                   .OCR1BValue=injection_duty_cycle , .OC1B=NON_INVERTING};
 	TIMER1_init(&timer1_config);
 	TIMER1_stopTimer();
 
 	DDRA = 0xFF;
 
-	startEngine();
-	ICU_deInit();
+	//startEngine();
+
+
+	//ICU3_DeInit();
 	while(1)
 	{
 
@@ -75,7 +80,7 @@ uint8 main (void)
 			/**/
 			if(TCNT2 == ignition_cylinder1_4_angle_on)
 			{
-				Timer1_restartTimer();
+				TIMER1_restartTimer();
 				SET_BIT(PORTA,PA4);
 			}
 			else if(TCNT2 == ignition_cylinder1_4_angle_off)
@@ -160,61 +165,69 @@ uint8 main (void)
 
 void startEngine (void)
 {
-		uint32 period = 0;
 
 		/* Set the Call back function pointer in the ICU driver */
-		ICU_setCallBack(APP_edgeProcessing);
+
 
 		SET_BIT(PORTA,PA0);
-		_delay_us(30);
+		_delay_ms(500);
 		CLEAR_BIT(PORTA,PA0);
 
-		while( >= period >= )
+		while(  g_period < 50.00 )
 		{
-			if(g_edgeCount == 4)
-			{
+
+				SET_BIT(PORTA,PA1);
 				g_edgeCount = 0;
 				/* calculate the period */
-				period = ((g_timePeriodPlusHigh - g_timeHigh) / 1000);
-			}
+				g_period = (((float32) (g_timeHigh)) / ((float32)(g_timePeriod)+(float32)(g_timeHigh))) * 100.00;
+
 		}
 }
 
 void APP_edgeProcessing(void)
 {
 	g_edgeCount++;
-	if(g_edgeCount == 1)
+	switch (g_edgeCount)
 	{
+	case 1:
 		/*
 		 * Clear the timer counter register to start measurements from the
-		 * first detected rising edge
-		 */
-		ICU_clearTimerValue();
+		 * first detected rising edge */
+		ICU3_clearTimerValue();
 		/* Detect falling edge */
-		ICU_setEdgeDetectionType(FALLING);
-	}
-	else if(g_edgeCount == 2)
-	{
+		ICU3_setEdgeDetectionType(FALLING);
+		break;
+
+	case 2:
 		/* Store the High time value */
-		g_timeHigh = ICU_getInputCaptureValue();
+		g_timeHigh = ICU3_getInputCaptureValue();
 		/* Detect rising edge */
-		ICU_setEdgeDetectionType(RISING);
-	}
-	else if(g_edgeCount == 3)
-	{
+		ICU3_setEdgeDetectionType(RISING);
+		ICU3_clearTimerValue();
+
+		break;
+
+	case 3:
 		/* Store the Period time value */
-		g_timePeriod = ICU_getInputCaptureValue();
+		g_timePeriod = ICU3_getInputCaptureValue();
 		/* Detect falling edge */
-		ICU_setEdgeDetectionType(FALLING);
-	}
-	else if(g_edgeCount == 4)
-	{
+		ICU3_setEdgeDetectionType(FALLING);
+		ICU3_clearTimerValue();
+	    break;
+
+	case 4:
 		/* Store the Period time value + High time value */
-		g_timePeriodPlusHigh = ICU_getInputCaptureValue();
+		g_timePeriodPlusHigh = ICU3_getInputCaptureValue();
 		/* Clear the timer counter register to start measurements again */
-		ICU_clearTimerValue();
 		/* Detect rising edge */
-		ICU_setEdgeDetectionType(RISING);
+		ICU3_setEdgeDetectionType(RISING);
+		ICU3_clearTimerValue();
+		g_edgeCount = 0;
+		/* calculate the period */
+		break;
+
+	default:
+		break;
 	}
 }
 

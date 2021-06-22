@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../ICU.c \
+../Icu1.c \
 ../PWM_signalMeasuring.c \
 ../UART.c 
 
 OBJS += \
 ./ICU.o \
+./Icu1.o \
 ./PWM_signalMeasuring.o \
 ./UART.o 
 
 C_DEPS += \
 ./ICU.d \
+./Icu1.d \
 ./PWM_signalMeasuring.d \
 ./UART.d 
 

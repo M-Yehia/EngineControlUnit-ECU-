@@ -579,6 +579,9 @@ void TIMER1_stopTimer(void)
  */
 void TIMER1_restartTimer(void)
 {
+	/* Clear Clock Bits */
+	TCCR1B &= 0xF8 ;
+
 	/* Set Clock Bits */
 	TCCR1B |= ( g_T1clock << CS10) ;
 }
