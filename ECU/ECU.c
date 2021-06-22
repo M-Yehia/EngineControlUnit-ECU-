@@ -15,7 +15,7 @@
 /* Global Variable to indicate the crank revolution   */
 uint8 rev = 0;
 uint8 injection_duty_cycle;
-uint8 ignition_duty_cycle = 2.2 ; //3% = 1.8
+uint8 ignition_duty_cycle = 1.8 ; //3% = 1.8
 uint8 injection_cylinder1_4_angle_on;
 uint8 injection_cylinder1_4_angle_off;
 uint8 injection_cylinder2_3_angle_on;
@@ -52,8 +52,8 @@ uint8 main (void)
 	 - Channel A -> Injection
 	 - Channel B -> Ignition
 	 ---------------------------------------------------------*/
-	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =injection_duty_cycle, .OC=NON_INVERTING,
-	                                   .OCR1BValue=ignition_duty_cycle , .OC1B=NON_INVERTING};
+	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =ignition_duty_cycle, .OC=NON_INVERTING,
+	                                   .OCR1BValue=injection_duty_cycle , .OC1B=NON_INVERTING};
 	TIMER1_init(&timer1_config);
 	TIMER1_stopTimer();
 

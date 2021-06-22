@@ -203,10 +203,7 @@ int main(void)
 	{
 
 
-		 if (g_period >= 70)
-		 {
-			 TIMER2_resetTimer();
-		 }
+
 
 	}
 }

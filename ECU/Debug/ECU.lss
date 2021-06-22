@@ -1897,12 +1897,12 @@ uint8 main (void)
 	 - Channel A -> Injection
 	 - Channel B -> Ignition
 	 ---------------------------------------------------------*/
-	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =injection_duty_cycle, .OC=NON_INVERTING,
-	                                   .OCR1BValue=ignition_duty_cycle , .OC1B=NON_INVERTING};
-     ec6:	80 91 2c 02 	lds	r24, 0x022C
+	TIMER_ConfigType timer1_config = { .clock=EXTERNAL_RISING_EDGE, .mode=PWM, .ICR1Value=60 ,.OCRValue =ignition_duty_cycle, .OC=NON_INVERTING,
+	                                   .OCR1BValue=injection_duty_cycle , .OC1B=NON_INVERTING};
+     ec6:	80 91 08 02 	lds	r24, 0x0208
      eca:	28 2f       	mov	r18, r24
      ecc:	30 e0       	ldi	r19, 0x00	; 0
-     ece:	80 91 08 02 	lds	r24, 0x0208
+     ece:	80 91 2c 02 	lds	r24, 0x022C
      ed2:	48 2f       	mov	r20, r24
      ed4:	50 e0       	ldi	r21, 0x00	; 0
      ed6:	8d e0       	ldi	r24, 0x0D	; 13
