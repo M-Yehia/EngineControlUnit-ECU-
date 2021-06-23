@@ -15,7 +15,7 @@
 /* Global Variable to indicate the crank revolution   */
 uint8 rev = 0;
 uint8 injection_duty_cycle;
-uint8 ignition_duty_cycle = 1.8 ; //3% = 1.8
+float32 ignition_duty_cycle = 1.8 ; //3% = 1.8
 uint8 injection_cylinder1_4_angle_on;
 uint8 injection_cylinder1_4_angle_off;
 uint8 injection_cylinder2_3_angle_on;
@@ -117,7 +117,7 @@ uint8 main (void)
 		}
 
 		/**/
-		if (rev==1)
+		else if (rev==1)
 		{
 			/**/
 			if(TCNT2 == ignition_cylinder1_4_angle_on)
