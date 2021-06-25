@@ -1,22 +1,22 @@
-/*
- * Angle_Detection.c
- *
- *  Created on: May 28, 2021
- *      Author: Dodo
- */
+/*-------------------------------------------------------------------------
+ - File Name: Angle_Detection.c
+ -
+ - Description: Source file for ECU signal calibration
+ -
+ --------------------------------------------------------------------------*/
 #include "Angle_PWM_Detection.h"
 
-volatile uint8  rev=0;
-volatile uint8  ticks=0 ;
-volatile uint16 T_ON = 0;
-volatile uint16 T_OFF = 0;
-volatile uint16 T_TOTAL = 0;
-volatile uint8  PulseState = 0;
+volatile uint8    rev=0;
+volatile uint8    ticks=0 ;
+volatile uint16   T_ON = 0;
+volatile uint16   T_OFF = 0;
+volatile uint16   T_TOTAL = 0;
+volatile uint8    PulseState = 0;
 volatile float32  DutyCycle = 0 ;
-volatile uint8  g_edgeCount = 0;
-volatile uint16  g_timeHigh = 0;
-volatile uint16  g_timePeriodPlusHigh = 0;
-volatile uint16  g_timePeriod = 0;
+volatile uint8    g_edgeCount = 0;
+volatile uint16   g_timeHigh = 0;
+volatile uint16   g_timePeriodPlusHigh = 0;
+volatile uint16   g_timePeriod = 0;
 volatile float32  g_period = 0;
 
 void PulseMeasure(void)

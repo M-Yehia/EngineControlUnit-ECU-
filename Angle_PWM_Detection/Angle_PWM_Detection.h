@@ -1,9 +1,9 @@
-/*
- * Angle_Detection.h
- *
- *  Created on: May 28, 2021
- *      Author: Dodo
- */
+/*-------------------------------------------------------------------------
+ - File Name: Angle_Detection.h
+ -
+ - Description: Header file for ECU signal calibration
+ -
+ --------------------------------------------------------------------------*/
 
 #ifndef ANGLE_PWM_DETECTION_H_
 #define ANGLE_PWM_DETECTION_H_
