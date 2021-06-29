@@ -6,9 +6,9 @@
  (resolution mm 100000)
  (unit mm)
  (structure
-  (boundary (rect pcb -41.22720 -42.60160 116.80160 81.73107))
-  (boundary (path signal 0.20320 116.70000 -42.50000 116.70000 72.50000 -34.20000 72.50000
-   -34.20000 -42.50000 116.70000 -42.50000))
+  (boundary (rect pcb -41.22720 -42.10160 113.36360 74.23107))
+  (boundary (path signal 0.20320 113.23660 -40.73660 113.23660 67.50000 -33.23660 67.50000
+   -33.23660 -40.73660 113.23660 -40.73660))
   (flip_style mirror_first)
   (layer TOP (type signal) (direction horizontal))
   (layer I1 (type signal) (direction off))
@@ -37,7 +37,6 @@
    (spare
     $VIA#0_POWER
     PS0
-    PS12
    )
   )
   (rule
@@ -56,59 +55,57 @@
   (component "41612-1R-B-R_RIGHT.SIDE" (place RIGHT.SIDE 58.54000 32.86000 front 180
   ))
   (component "41612-1R-B-R_LEFT.SIDE" (place LEFT.SIDE 58.54000 2.66000 front 180))
-  (component "D-25-F-R_DB25" (place DB25 103.02000 42.58000 front 270))
-  (component DIL08_CRANK.BUFF (place CRANK.BUFF 21.47000 -17.54000 front 0))
-  (component DIL04_CRANK.SIGNAL (place CRANK.SIGNAL 40.48000 -17.54000 front 0))
-  (component DIL04_IGNITION1_4 (place IGNITION1_4 75.48000 -30.20000 front 0))
-  (component DIL04_IGNITION2_3 (place IGNITION2_3 92.70000 -30.20000 front 0))
-  (component SO8_IGNITION (place IGNITION 85.00000 -15.00000 front 270))
-  (component DIL04_INJ1 (place INJ1 -12.50000 -32.50000 front 0))
-  (component DIL04_INJ2 (place INJ2 -12.50000 -20.00000 front 0))
-  (component DIL04_INJ3 (place INJ3 -25.00000 -32.50000 front 0))
-  (component DIL04_INJ4 (place INJ4 -25.00000 -20.00000 front 0))
-  (component SO8_INJ1_2 (place INJ1_2 -22.50000 62.50000 front 90))
+  (component "D-25-F-R_DB25" (place DB25 98.02000 42.58000 front 270))
+  (component DIL08_CRANK.BUFF (place CRANK.BUFF 18.97000 -15.04000 front 0))
+  (component DIL04_CRANK.SIGNAL (place CRANK.SIGNAL 35.48000 -15.04000 front 0))
+  (component DIL04_IGNITION1_4 (place IGNITION1_4 67.98000 -30.20000 front 0))
+  (component DIL04_IGNITION2_3 (place IGNITION2_3 85.20000 -30.20000 front 0))
+  (component SO8_IGNITION (place IGNITION 82.50000 -12.50000 front 270))
+  (component DIL04_INJ1 (place INJ1 -12.50000 -27.50000 front 0))
+  (component DIL04_INJ2 (place INJ2 -12.50000 -15.00000 front 0))
+  (component DIL04_INJ3 (place INJ3 -25.00000 -27.50000 front 0))
+  (component DIL04_INJ4 (place INJ4 -25.00000 -15.00000 front 0))
+  (component SO8_INJ1_2 (place INJ1_2 -22.50000 60.00000 front 90))
   (component SO8_INJ3_4 (place INJ3_4 -22.50000 47.50000 front 90))
-  (component "SOT230P700X180-4_REG. 2V" (place "REG. 2V" 87.50000 60.00000 front 0))
-  (component "SOT230P700X180-4_REG. 5V" (place "REG. 5V" 87.50000 45.00000 front 0))
-  (component CAPC3216X140_C1 (place C1 60.00000 57.50000 front 0))
-  (component CAPC3216X140_C2 (place C2 60.00000 50.00000 front 0))
-  (component CAPC3216X140_C3 (place C3 5.00000 -25.00000 front 0))
-  (component CAPC3216X140_C4 (place C4 5.00000 -32.50000 front 0))
-  (component CAPC3216X140_C5 (place C5 20.00000 -25.00000 front 0))
-  (component CAPC3216X140_C6 (place C6 20.00000 -32.50000 front 0))
-  (component 1206_R1 (place R1 72.50000 50.00000 front 0))
-  (component 1206_R2 (place R2 72.50000 57.50000 front 0))
-  (component 1206_R3 (place R3 5.00000 -17.50000 front 0))
-  (component 1206_R4 (place R4 5.00000 -10.00000 front 0))
-  (component 1206_R5 (place R5 32.50000 -25.00000 front 0))
-  (component 1206_R32 (place R32 32.50000 -32.50000 front 0))
-  (component 1206_R33 (place R33 45.00000 -32.50000 front 0))
-  (component DIODE30_D5 (place D5 57.50000 -17.50000 front 0))
-  (component DIODE30_D6 (place D6 57.50000 -10.00000 front 0))
-  (component 1206_R26 (place R26 45.00000 -25.00000 front 0))
-  (component 1206_R27 (place R27 63.14960 -32.50000 front 180))
-  (component 1206_R28 (place R28 60.00000 -25.00000 front 0))
-  (component 1206_R6 (place R6 -10.00000 65.00000 front 0))
-  (component 1206_R7 (place R7 -10.00000 55.00000 front 0))
+  (component "SOT230P700X180-4_REG. 2V" (place "REG. 2V" 77.50000 60.00000 front 0))
+  (component "SOT230P700X180-4_REG. 5V" (place "REG. 5V" 77.50000 45.00000 front 0))
+  (component CAPC3216X140_C1 (place C1 47.50000 57.50000 front 0))
+  (component CAPC3216X140_C2 (place C2 47.50000 50.00000 front 0))
+  (component CAPC3216X140_C3 (place C3 2.50000 -22.50000 front 0))
+  (component CAPC3216X140_C4 (place C4 2.50000 -30.00000 front 0))
+  (component CAPC3216X140_C5 (place C5 15.00000 -22.50000 front 0))
+  (component CAPC3216X140_C6 (place C6 15.00000 -30.00000 front 0))
+  (component 1206_R1 (place R1 43.14960 -30.00000 front 180))
+  (component 1206_R3 (place R3 2.50000 -15.00000 front 0))
+  (component 1206_R4 (place R4 2.50000 -7.50000 front 0))
+  (component 1206_R5 (place R5 27.50000 -22.50000 front 0))
+  (component 1206_R32 (place R32 30.00000 -30.00000 front 180))
+  (component DIODE30_D5 (place D5 47.50000 -15.00000 front 0))
+  (component DIODE30_D6 (place D6 47.50000 -7.50000 front 0))
+  (component 1206_R26 (place R26 40.00000 -22.50000 front 0))
+  (component 1206_R27 (place R27 53.14960 -30.00000 front 180))
+  (component 1206_R28 (place R28 50.00000 -22.50000 front 0))
+  (component 1206_R6 (place R6 -10.00000 60.00000 front 0))
+  (component 1206_R7 (place R7 -10.00000 52.50000 front 0))
   (component 1206_R8 (place R8 -10.00000 45.00000 front 0))
-  (component 1206_R9 (place R9 77.50000 15.00000 front 0))
-  (component 1206_R10 (place R10 77.50000 5.00000 front 0))
-  (component 1206_R11 (place R11 5.00000 65.00000 front 0))
-  (component 1206_R12 (place R12 5.00000 55.00000 front 0))
-  (component 1206_R13 (place R13 5.00000 45.00000 front 0))
-  (component 1206_R14 (place R14 90.00000 15.00000 front 0))
-  (component 1206_R15 (place R15 90.00000 5.00000 front 0))
-  (component 1206_R16 (place R16 20.00000 62.50000 front 0))
-  (component 1206_R17 (place R17 20.00000 57.50000 front 0))
-  (component 1206_R19 (place R19 20.00000 52.50000 front 0))
-  (component 1206_R30 (place R30 20.00000 47.50000 front 0))
-  (component DIODE30_D1 (place D1 35.00000 62.50000 front 270))
-  (component DIODE30_D2 (place D2 35.00000 50.00000 front 270))
-  (component DIODE30_D3 (place D3 45.00000 62.50000 front 270))
-  (component DIODE30_D4 (place D4 45.00000 50.00000 front 270))
-  (component DIL04_INJ.SIGNAL (place INJ.SIGNAL 85.00000 27.50000 front 0))
-  (component 1206_R24 (place R24 80.64960 -5.00000 front 180))
-  (component 1206_R25 (place R25 92.50000 -5.00000 front 180))
+  (component 1206_R9 (place R9 72.50000 22.50000 front 0))
+  (component 1206_R10 (place R10 72.50000 12.50000 front 0))
+  (component 1206_R11 (place R11 0.00000 60.00000 front 0))
+  (component 1206_R12 (place R12 0.00000 52.50000 front 0))
+  (component 1206_R13 (place R13 0.00000 45.00000 front 0))
+  (component 1206_R14 (place R14 85.00000 22.50000 front 0))
+  (component 1206_R15 (place R15 85.00000 12.50000 front 0))
+  (component 1206_R16 (place R16 10.00000 60.00000 front 0))
+  (component 1206_R17 (place R17 10.00000 52.50000 front 0))
+  (component 1206_R30 (place R30 10.00000 45.00000 front 0))
+  (component DIODE30_D1 (place D1 25.00000 62.50000 front 270))
+  (component DIODE30_D2 (place D2 25.00000 50.00000 front 270))
+  (component DIODE30_D3 (place D3 35.00000 62.50000 front 270))
+  (component DIODE30_D4 (place D4 35.00000 50.00000 front 270))
+  (component 1206_R24 (place R24 78.14960 -2.50000 front 180))
+  (component 1206_R25 (place R25 90.00000 -2.50000 front 180))
+  (component TRIM_3214W_RV1 (place RV1 63.60300 46.27000 front 0))
+  (component TRIM_3214W_RV2 (place RV2 62.50000 62.50000 front 0))
  )
  (library
   (image "41612-1R-B-R_RIGHT.SIDE" (side front)
@@ -357,11 +354,6 @@
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
    (pin PS10 (rotate 0) 1 3.14960 0.00000)
   )
-  (image 1206_R2 (side front)
-   (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
-   (pin PS10 (rotate 0) 0 0.00000 0.00000)
-   (pin PS10 (rotate 0) 1 3.14960 0.00000)
-  )
   (image 1206_R3 (side front)
    (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
@@ -378,11 +370,6 @@
    (pin PS10 (rotate 0) 1 3.14960 0.00000)
   )
   (image 1206_R32 (side front)
-   (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
-   (pin PS10 (rotate 0) 0 0.00000 0.00000)
-   (pin PS10 (rotate 0) 1 3.14960 0.00000)
-  )
-  (image 1206_R33 (side front)
    (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
    (pin PS10 (rotate 0) 1 3.14960 0.00000)
@@ -472,11 +459,6 @@
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
    (pin PS10 (rotate 0) 1 3.14960 0.00000)
   )
-  (image 1206_R19 (side front)
-   (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
-   (pin PS10 (rotate 0) 0 0.00000 0.00000)
-   (pin PS10 (rotate 0) 1 3.14960 0.00000)
-  )
   (image 1206_R30 (side front)
    (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
@@ -502,13 +484,6 @@
    (pin PS11 (rotate 0) 0 0.00000 0.00000)
    (pin PS11 (rotate 0) 1 7.62000 0.00000)
   )
-  (image DIL04_INJ.SIGNAL (side front)
-   (outline (rect TOP -1.37160 -0.63500 3.91160 8.25500))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS5 (rotate 0) 1 2.54000 0.00000)
-   (pin PS5 (rotate 0) 2 2.54000 7.62000)
-   (pin PS5 (rotate 0) 3 0.00000 7.62000)
-  )
   (image 1206_R24 (side front)
    (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
@@ -518,6 +493,18 @@
    (outline (rect TOP -0.50800 -0.83820 3.65760 0.83820))
    (pin PS10 (rotate 0) 0 0.00000 0.00000)
    (pin PS10 (rotate 0) 1 3.14960 0.00000)
+  )
+  (image TRIM_3214W_RV1 (side front)
+   (outline (rect TOP -2.56540 -2.81940 2.43840 2.69240))
+   (pin PS10 (rotate -90) 0 1.39700 -1.27000)
+   (pin PS10 (rotate -90) 1 1.39700 1.27000)
+   (pin PS12 (rotate 0) 2 -1.52400 0.00000)
+  )
+  (image TRIM_3214W_RV2 (side front)
+   (outline (rect TOP -2.56540 -2.81940 2.43840 2.69240))
+   (pin PS10 (rotate -90) 0 1.39700 -1.27000)
+   (pin PS10 (rotate -90) 1 1.39700 1.27000)
+   (pin PS12 (rotate 0) 2 -1.52400 0.00000)
   )
   (padstack PS0 (absolute on)
    (shape (circle TOP 3.00000 0 0))
@@ -650,24 +637,7 @@
    (shape (circle I14 1.77800 0 0))
    (shape (circle BOT 1.77800 0 0))
   )
-  (padstack PS12 (absolute on)
-   (shape (circle TOP 0.50800 0 0))
-   (shape (circle I1 0.50800 0 0))
-   (shape (circle I2 0.50800 0 0))
-   (shape (circle I3 0.50800 0 0))
-   (shape (circle I4 0.50800 0 0))
-   (shape (circle I5 0.50800 0 0))
-   (shape (circle I6 0.50800 0 0))
-   (shape (circle I7 0.50800 0 0))
-   (shape (circle I8 0.50800 0 0))
-   (shape (circle I9 0.50800 0 0))
-   (shape (circle I10 0.50800 0 0))
-   (shape (circle I11 0.50800 0 0))
-   (shape (circle I12 0.50800 0 0))
-   (shape (circle I13 0.50800 0 0))
-   (shape (circle I14 0.50800 0 0))
-   (shape (circle BOT 0.50800 0 0))
-  )
+  (padstack PS12 (absolute on) (shape (rect TOP -0.76200 -1.01600 0.76200 1.01600)))
   (padstack $VIA#0_SIGNAL (absolute on)
    (shape (circle TOP 0.50800 0 0))
    (shape (circle I1 0.50800 0 0))
@@ -715,7 +685,16 @@
    )
    (pins "REG. 5V"-1 "REG. 5V"-3 R1-0 D5-0)
   )
-  (net "#00004"
+  (net "#00002"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via
+     $VIA#0_SIGNAL
+    )
+   )
+   (pins "REG. 5V"-0 C2-0 RV1-1)
+  )
+  (net "#00005"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -724,7 +703,7 @@
    )
    (pins CRANK.SIGNAL-0 R4-1)
   )
-  (net "#00008"
+  (net "#00009"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -733,7 +712,7 @@
    )
    (pins CRANK.BUFF-5 R3-0 R4-0)
   )
-  (net "#00014"
+  (net "#00015"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -742,7 +721,7 @@
    )
    (pins INJ1_2-2 R6-0 R12-1)
   )
-  (net "#00015"
+  (net "#00016"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -751,7 +730,7 @@
    )
    (pins INJ1-2 R6-1)
   )
-  (net "#00016"
+  (net "#00017"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -760,7 +739,7 @@
    )
    (pins INJ1_2-6 R7-0 R13-1)
   )
-  (net "#00017"
+  (net "#00018"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -769,7 +748,7 @@
    )
    (pins INJ2-2 R7-1)
   )
-  (net "#00018"
+  (net "#00019"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -778,7 +757,7 @@
    )
    (pins INJ3_4-2 R8-0 R11-1)
   )
-  (net "#00019"
+  (net "#00020"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -787,7 +766,7 @@
    )
    (pins INJ3-2 R8-1)
   )
-  (net "#00020"
+  (net "#00021"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -796,7 +775,7 @@
    )
    (pins INJ3_4-6 R9-0 R10-1)
   )
-  (net "#00021"
+  (net "#00022"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -805,16 +784,7 @@
    )
    (pins INJ4-2 R9-1)
   )
-  (net "#00022"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via
-     $VIA#0_SIGNAL
-    )
-   )
-   (pins INJ1_2-0 INJ1_2-4 INJ3_4-0 INJ3_4-4 R10-0 R11-0 R12-0 R13-0 INJ.SIGNAL-2)
-  )
-  (net "#00029"
+  (net "#00030"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -823,7 +793,7 @@
    )
    (pins INJ1-1 R14-1)
   )
-  (net "#00031"
+  (net "#00032"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -832,7 +802,7 @@
    )
    (pins INJ2-1 R15-1)
   )
-  (net "#00033"
+  (net "#00034"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -841,7 +811,7 @@
    )
    (pins INJ3-1 R16-1)
   )
-  (net "#00035"
+  (net "#00036"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -857,18 +827,9 @@
      $VIA#0_SIGNAL
     )
    )
-   (pins R19-0 INJ.SIGNAL-1)
-  )
-  (net "#00040"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via
-     $VIA#0_SIGNAL
-    )
-   )
    (pins IGNITION1_4-1 R30-1)
   )
-  (net "#00041"
+  (net "#00039"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -877,7 +838,7 @@
    )
    (pins IGNITION1_4-3 R24-1 R25-1)
   )
-  (net "#00044"
+  (net "#00042"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -886,7 +847,7 @@
    )
    (pins IGNITION2_3-1 R28-1)
   )
-  (net "#00045"
+  (net "#00043"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -895,7 +856,7 @@
    )
    (pins IGNITION2_3-3 R26-1 R27-1)
   )
-  (net "#00048"
+  (net "#00046"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -904,7 +865,7 @@
    )
    (pins IGNITION-2 R25-0)
   )
-  (net "#00050"
+  (net "#00048"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -913,7 +874,7 @@
    )
    (pins IGNITION-6 R27-0)
   )
-  (net "#00061"
+  (net "#00059"
    (circuit
     (use_layer TOP BOT)
     (use_via
@@ -921,6 +882,15 @@
     )
    )
    (pins "REG. 2V"-1 "REG. 2V"-3 R32-0 D6-0)
+  )
+  (net "#00060"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via
+     $VIA#0_SIGNAL
+    )
+   )
+   (pins "REG. 2V"-0 C4-0 RV2-1)
   )
   (net "+12"
    (circuit
@@ -930,8 +900,8 @@
     )
    )
     (pins DB25-3 DB25-11 DB25-12 DB25-15 DB25-24 IGNITION-0 IGNITION-4 INJ1-3 INJ2-3 INJ3-3
-     INJ4-3 "REG. 2V"-2 "REG. 5V"-2 C1-0 C3-0 D5-1 D6-1 R26-0 D1-1 D2-1 D3-1 D4-1 INJ.SIGNAL-3
-    R24-0)
+     INJ4-3 "REG. 2V"-2 "REG. 5V"-2 C1-0 C3-0 D5-1 D6-1 R26-0 D1-1 D2-1 D3-1 D4-1 R24-0
+   )
   )
   (net "+2"
    (circuit
@@ -940,7 +910,7 @@
      $VIA#0_SIGNAL
     )
    )
-   (pins CRANK.BUFF-1 "REG. 2V"-0 C4-0 C5-0 R32-1 R33-1)
+   (pins CRANK.BUFF-1 C5-0 R32-1 RV2-2)
   )
   (net "+5"
    (circuit
@@ -949,8 +919,8 @@
      $VIA#0_SIGNAL
     )
    )
-    (pins RIGHT.SIDE-21 RIGHT.SIDE-33 LEFT.SIDE-22 CRANK.BUFF-6 CRANK.SIGNAL-3 "REG. 5V"-0
-    C2-0 C6-0 R1-1 R2-1)
+    (pins RIGHT.SIDE-21 RIGHT.SIDE-33 LEFT.SIDE-22 CRANK.BUFF-6 CRANK.SIGNAL-3 C6-0 R1-1
+    RV1-2)
   )
   (net "CRANK_INPUT"
    (circuit
@@ -978,8 +948,9 @@
     )
    )
     (pins RIGHT.SIDE-22 RIGHT.SIDE-32 LEFT.SIDE-23 DB25-0 DB25-1 DB25-2 DB25-13 DB25-14
-     CRANK.BUFF-3 CRANK.SIGNAL-1 IGNITION1_4-2 IGNITION2_3-2 C1-1 C2-1 C3-1 C4-1 C5-1
-    C6-1 R2-0 R3-1 R5-1 R33-0 R28-0 R14-0 R15-0 R16-0 R17-0 R19-1 R30-0)
+     CRANK.BUFF-3 CRANK.SIGNAL-1 IGNITION1_4-2 IGNITION2_3-2 INJ1_2-0 INJ1_2-4 INJ3_4-0
+     INJ3_4-4 C1-1 C2-1 C3-1 C4-1 C5-1 C6-1 R3-1 R5-1 R28-0 R10-0 R11-0 R12-0 R13-0 R14-0
+    R15-0 R16-0 R17-0 R30-0 RV1-0 RV2-0)
   )
   (net "IGNITION1_4"
    (circuit
@@ -998,15 +969,6 @@
     )
    )
    (pins DB25-5 DB25-6 DB25-18 IGNITION-1 IGNITION-3)
-  )
-  (net "INJECTION_SIGNAL"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via
-     $VIA#0_SIGNAL
-    )
-   )
-   (pins LEFT.SIDE-16 INJ.SIGNAL-0)
   )
   (net "INJECTOR1"
    (circuit
@@ -1114,9 +1076,9 @@
   )
   (class SIGNAL
    "#00001"
-   "#00004"
-   "#00008"
-   "#00014"
+   "#00002"
+   "#00005"
+   "#00009"
    "#00015"
    "#00016"
    "#00017"
@@ -1125,18 +1087,18 @@
    "#00020"
    "#00021"
    "#00022"
-   "#00029"
-   "#00031"
-   "#00033"
-   "#00035"
+   "#00030"
+   "#00032"
+   "#00034"
+   "#00036"
    "#00038"
-   "#00040"
-   "#00041"
-   "#00044"
-   "#00045"
+   "#00039"
+   "#00042"
+   "#00043"
+   "#00046"
    "#00048"
-   "#00050"
-   "#00061"
+   "#00059"
+   "#00060"
    "+12"
    "+2"
    "+5"
@@ -1144,7 +1106,6 @@
    "CRANK_SENSOR_SIGNAL"
    "IGNITION1_4"
    "IGNITION2_3"
-   "INJECTION_SIGNAL"
    "INJECTOR1"
    "INJECTOR2"
    "INJECTOR3"
@@ -1171,16 +1132,11 @@
   )
  )
  (wiring
-   (wire (path TOP 0.50800 -23.13500 65.10350 -23.13500 66.67500 -24.40500 66.67500 -24.40500 65.10350
-  ) (net "INJECTOR1"))
-  (via PS0 40.00000 -37.50000 (net {NC-1}) (type protect))
-  (via PS0 112.50000 67.50000 (net {NC-2}) (type protect))
-  (via PS0 42.25300 67.24100 (net {NC-3}) (type protect))
-  (via PS0 -30.00000 67.50000 (net {NC-4}) (type protect))
-  (via PS0 -30.00000 -37.50000 (net {NC-5}) (type protect))
-  (via PS0 112.50000 -37.50000 (net {NC-6}) (type protect))
-  (via PS12 -8.89000 64.77000 (net "#00015"))
-  (via PS12 3.81000 64.77000 (net "#00022"))
-  (via PS12 52.70500 64.77000 (net "+2"))
+  (via PS0 40.00000 -35.00000 (net {NC-1}) (type protect))
+  (via PS0 107.50000 65.00000 (net {NC-2}) (type protect))
+  (via PS0 42.50000 65.00000 (net {NC-3}) (type protect))
+  (via PS0 -30.00000 65.00000 (net {NC-4}) (type protect))
+  (via PS0 -30.00000 -35.00000 (net {NC-5}) (type protect))
+  (via PS0 107.50000 -35.00000 (net {NC-6}) (type protect))
  )
 )
